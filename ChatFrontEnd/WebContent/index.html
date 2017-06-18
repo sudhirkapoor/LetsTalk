@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="chatApp">
+  <head>
+    <meta charset="utf-8">
+        <meta name="author" content="Sudhir Kapoor">
+    <title>Chat App</title>
+    	<link rel="icon" type="image/png"  href="lib/images/backg.png">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>-->
+    
+<script type="text/javascript" src="lib/js/angular.js" charset="utf-8"></script>
+<script type="text/javascript" src="lib/js/angular-route.js" charset="utf-8"></script>
+	<script type="text/javascript" src="lib/js/angular-resource.js" charset="utf-8"></script>
+    <script src="lib/js/jquery.js" charset="utf-8"></script>
+    <script src="lib/js/bootstrap.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="lib/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="lib/css/login.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="lib/css/signup.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+<header>
+
+    <!-- Fixed navbar -->
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#/">MyChat</a>
+          </div>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <li><a href="#/"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+              
+              
+            </ul>
+            
+        <ul class="nav navbar-nav navbar-right">
+          		
+              <li><a href="#/login" ng-show="!isUserLoggedIn"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</a></li>
+              <li><a href="#/signup" ng-show="!isUserLoggedIn"><span class="glyphicon glyphicon-log-in"></span>&nbsp;SignUp</a></li>
+              <li><a href="#/logout" ng-show="isUserLoggedIn"><span class="glyphicon glyphicon-off"></span>&nbsp;Logout</a></li>
+        
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </header>
+
+      <!-- Begin page content -->
+      <div ng-view></div>
+
+
+          <script src="app.js"></script>
+       
+          <script src="controllers/user_controller.js"></script>
+          <script src="controllers/login_controller.js"></script>
+          
+  </body>
+</html>
