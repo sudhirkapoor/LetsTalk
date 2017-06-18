@@ -13,14 +13,14 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 @Entity
-@Table
+
 public class UserDetail {
 	
 	@Id
-	@NotEmpty
-	@NotNull
+	//@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String username;
+	@Column
 	private String name;
 	private String password;
 	private boolean enable;
@@ -65,7 +65,7 @@ public class UserDetail {
 	
 	@Override
 	public String toString() {
-		return "UserDetail [email=" + username + ", name=" + name + ", password=" + password + ", enable=" + enable + ", role="
+		return "UserDetail [id=" + id + ",email=" + username + ", name=" + name + ", password=" + password + ", enable=" + enable + ", role="
 				+ role + "]";
 	}
 

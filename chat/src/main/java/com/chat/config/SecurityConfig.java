@@ -20,8 +20,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
 
 		auth.jdbcAuthentication().dataSource(dataSource)
-				.usersByUsernameQuery("select username,password, enabled from usertable where username=?")
-				.authoritiesByUsernameQuery("select username, role from usertabel where username =? ");
+				.usersByUsernameQuery("select username,password, enabled from userdetail where username=?")
+				.authoritiesByUsernameQuery("select username, role from userdetail where username =? ");
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.loginPage("/login")
 				.failureUrl("/login?error")
 				.usernameParameter("username").passwordParameter("password")
-				.defaultSuccessUrl("/")
+				.defaultSuccessUrl("/userhome")
 				.and()
 				.logout()
 				.logoutSuccessUrl("/login?logout")
