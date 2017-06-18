@@ -7,6 +7,7 @@ app.controller('LoginController', function($scope, $http, $location,$rootScope) 
 
 			alert('Welcome to MyChat');
 			$rootScope.isUserLoggedIn = true;
+			$rootScope.userdata=data;
 			    $location.path('/home');          
 
 			    }).error(function(data, status, headers, config, statusText) {
