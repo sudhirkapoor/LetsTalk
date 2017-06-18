@@ -2,6 +2,20 @@ app.controller('UserController', function($scope,$http,$location) {
 
 $scope.createUser=function(){
     
+	 var newPassword = document.getElementById('password').value;
+	    var minNumberofChars = 8;
+	    var maxNumberofChars = 16;
+	    var regularExpression = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+	    alert(newPassword); 
+	    if(newPassword.length < minNumberofChars || newPassword.length > maxNumberofChars){
+	        alert('small password')
+	    }
+	    if(!regularExpression.test(newPassword)) {
+	        alert("password should contain atleast one number and one special character");
+	        
+	    }
+	
+	
  $scope.role="ROLE_USER";
  $scope.enable=1;
 
