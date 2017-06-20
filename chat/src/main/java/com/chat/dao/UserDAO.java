@@ -1,6 +1,7 @@
 package com.chat.dao;
 
 import java.util.List;
+import java.util.Scanner;
 
 import javax.transaction.Transactional;
 
@@ -23,6 +24,7 @@ public class UserDAO {
 
 	public List<UserDetail> findAllUsers() {
 		return sessionFactory.getCurrentSession().createQuery("from UserDetail").list();
+		
 	}
 
 	public UserDetail findById(String username) {
